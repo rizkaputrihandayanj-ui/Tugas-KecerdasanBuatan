@@ -17,7 +17,7 @@
 
 | Nama | NIM | Username GitHub | Kontribusi utama |
 |---|---|---|---|
-| ✍️ | ✍️ | ✍️ | ✍️ misal: menjalankan eksperimen, menulis Bagian 3 |
+| Rizka Putri Handayani | 123430017 | rizkaputrihandayanj-ui |  misal: menjalankan eksperimen, menulis Bagian 3 |
 | ✍️ | ✍️ | ✍️ | ✍️ |
 | ✍️ | ✍️ | ✍️ | ✍️ |
 
@@ -30,9 +30,9 @@ Augmentasi apa yang membantu U-Net menemukan polip pada citra kolonoskopi, dan a
 <!-- Isi dari Bagian 2 notebook. Pastikan CEPAT = False untuk hasil akhir. -->
 
 - Dataset: Kvasir-SEG (1000 citra kolonoskopi + mask polip), diperkecil ke 128 × 128 piksel.
-- Data uji: 200 citra (tetap). Data latih: ✍️ citra per ulangan.
-- Model: U-Net mini (±0,5 juta parameter), ✍️ epoch, ✍️ ulangan per skenario.
-- Dijalankan di: ✍️ (misal: Google Colab T4 / laptop CPU / Mac M1).
+- Data uji: 200 citra (tetap). Data latih: 800 citra per ulangan.
+- Model: U-Net mini (±0,5 juta parameter), 30 epoch, 3 ulangan per skenario.
+- Dijalankan di: Google Colab T4.
 
 ![Contoh data](hasil/contoh_data.png)
 
