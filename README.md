@@ -17,7 +17,7 @@
 
 | Nama | NIM | Username GitHub | Kontribusi utama |
 |---|---|---|---|
-| Rizka Putri Handayani | 123430017 | rizkaputrihandayanj-ui |  menjalankan eksperimen, menulis bagian 3, menulis bagian 4 |
+| Rizka Putri Handayani | 123430017 | rizkaputrihandayanj-ui |  menjalankan eksperimen,menjalankan di collab, menulis bagian 2, menulis bagian 3, menulis bagian 4 |
 | Aliyah Wardani | 12343003 | aliyahwardani237 | menulis bagian 5, menulis bagian 6, menulis bagian 7, menulis bagian 8 |
 
 ## 1. Pertanyaan
