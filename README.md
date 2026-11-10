@@ -18,7 +18,7 @@
 | Nama | NIM | Username GitHub | Kontribusi utama |
 |---|---|---|---|
 | Rizka Putri Handayani | 123430017 | rizkaputrihandayanj-ui |  menjalankan eksperimen, menulis bagian 3, menulis bagian 4 |
-| ✍️ | ✍️ | ✍️ | ✍️ |
+| Aliyah Wardani | 12343003 | aliyahwardani237 | menulis bagian 5, menulis bagian 6, menulis bagian 7, menulis bagian 8 |
 
 ## 1. Pertanyaan
 
@@ -68,34 +68,30 @@ Contoh augmentasi yang dicoba:
 
 ## 5. Analisis peta kesalahan
 
-![Peta kesalahan](hasil/peta_kesalahan.png)
+Berdasarkan visualisasi peta kesalahan segmentasi, terlihat bahwa performa model berbeda pada setiap jenis augmentasi. Pengujian tanpa augmentasi menghasilkan rata-rata Dice sebesar 0,478, sedangkan flip horizontal memperoleh nilai tertinggi sebesar 0,705. Augmentasi rotasi menghasilkan rata-rata Dice sebesar 0,558, kombinasi augmentasi sebesar 0,510, dan perubahan kecerahan serta kontras memperoleh nilai terendah sebesar 0,095. Hasil ini menunjukkan bahwa flip horizontal memberikan kesesuaian segmentasi terbaik dibandingkan teknik augmentasi lainnya pada empat citra yang diuji.
 
-<!-- Hijau = benar, merah = false positive, biru = false negative.
-     Pertanyaan pemandu: Polip seperti apa yang sering terlewat (kecil? datar? warna mirip dinding usus?)
-     Apa yang sering dikira polip padahal bukan? Apakah augmentasi memperbaiki kasus sulit? -->
+Perbedaan nilai Dice menunjukkan bahwa model masih memiliki tingkat kesalahan segmentasi yang bervariasi, terutama dalam mengenali area dan batas objek sesuai anotasi dokter. Pada beberapa citra, hasil prediksi memiliki kesesuaian yang tinggi, sedangkan citra lainnya menunjukkan perbedaan area yang cukup besar. Perubahan kecerahan dan kontras diduga memengaruhi kemampuan model dalam mengenali karakteristik objek, sehingga menghasilkan segmentasi yang kurang optimal. Secara keseluruhan, flip horizontal menjadi teknik augmentasi dengan hasil terbaik pada pengujian ini, tetapi pengujian menggunakan lebih banyak data tetap diperlukan untuk memastikan konsistensi performa model.
 
-✍️
+https://colab.research.google.com/drive/1SA3Hcq02cK_OzUxZQH8k8mBtKLuKPYcD#scrollTo=0b460587&fullscreenOutput=true
 
 ## 6. Pembahasan & kesimpulan
 
-<!-- Bandingkan hasil dengan hipotesis di Bagian 3. Hipotesis yang ternyata salah tetap bernilai,
-     asalkan dijelaskan kenapa. Perbedaan kecil (lebih kecil dari simpangan baku) belum tentu berarti. -->
+Berdasarkan hasil eksperimen, hipotesis bahwa seluruh jenis augmentasi dapat meningkatkan nilai Dice tidak sepenuhnya terbukti. Augmentasi flip horizontal menghasilkan nilai Dice tertinggi sebesar 0,574 ± 0,045, diikuti rotasi sebesar 0,562 ± 0,059. Kedua augmentasi tersebut menunjukkan peningkatan dibandingkan kondisi tanpa augmentasi yang memperoleh Dice sebesar 0,535 ± 0,078. Hal ini menunjukkan bahwa perubahan orientasi citra dapat membantu U-Net mengenali polip dengan lebih baik karena posisi dan sudut pandang polip pada pemeriksaan kolonoskopi dapat bervariasi. Sementara itu, kombinasi augmentasi menghasilkan Dice sebesar 0,543 ± 0,041, yang hanya sedikit lebih tinggi dibandingkan tanpa augmentasi. Augmentasi kecerahan dan kontras justru menghasilkan Dice terendah sebesar 0,438 ± 0,102. Penurunan ini kemungkinan terjadi karena perubahan intensitas warna dan kontras memengaruhi karakteristik visual polip, sehingga model kesulitan membedakan polip dengan jaringan di sekitarnya. Selain itu, perbedaan hasil antarulangan menunjukkan bahwa performa model masih dipengaruhi oleh variasi proses pelatihan.
 
-✍️
+Dengan demikian, augmentasi yang paling membantu dalam eksperimen ini yaitu flip horizontal, sedangkan augmentasi kecerahan dan kontras belum memberikan hasil yang baik. Rotasi juga menunjukkan peningkatan performa, meskipun hasilnya sedikit lebih rendah dibandingkan flip horizontal. Penggunaan kombinasi augmentasi belum memberikan peningkatan yang berarti karena kemungkinan variasi yang diberikan secara bersamaan justru membuat karakteristik citra menjadi lebih sulit dikenali. Berdasarkan hasil tersebut, augmentasi geometris lebih sesuai untuk membantu segmentasi polip pada dataset yang diuji dibandingkan augmentasi perubahan intensitas pencahayaan. Namun, hasil ini masih terbatas pada dataset, ukuran citra, dan konfigurasi model yang digunakan.
 
-## 7. Pembagian kerja
 
-<!-- Siapa mengerjakan apa. Penilaian proses kerja dilihat dari riwayat commit tiap anggota. -->
+## 7. Pembagian Kerja
 
-✍️
+| Nama | NIM | Username GitHub | Kontribusi utama |
+|---|---|---|---|
+| Rizka Putri Handayani | 123430017 | rizkaputrihandayanj-ui | Mengerjakan bagian 1–4, meliputi pertanyaan penelitian, pengaturan dataset dan model, penyusunan skenario augmentasi dan hipotesis, menjalankan eksperimen, serta menyusun hasil pengujian. |
+| Aliyah Wardani | 123430031 | aliyahwardani237 | Mengerjakan bagian 5–8, meliputi analisis peta kesalahan segmentasi, pembahasan dan kesimpulan, penyusunan pembagian kerja, serta dokumentasi penggunaan AI. |
+
 
 ## 8. Penggunaan AI
 
-<!-- Wajib diisi, walau tidak memakai AI (tulis "Tidak memakai AI").
-     Contoh: "Claude Code (CLI) untuk menulis skenario augmentasi dan memperbaiki error di Bagian 4.
-     Draf Bagian 6 ditulis sendiri, lalu dirapikan bahasanya dengan bantuan AI." -->
-
-✍️
+ChatGPT digunakan sebagai alat bantu dalam menyusun dan merapikan penulisan laporan, khususnya pada bagian analisis peta kesalahan segmentasi serta pembahasan dan kesimpulan hasil eksperimen. AI juga membantu menjelaskan perbandingan nilai Dice pada setiap skenario augmentasi agar hasil pengujian lebih mudah dipahami. Seluruh data hasil eksperimen, pemilihan skenario augmentasi, dan evaluasi performa model tetap mengacu pada hasil pengujian yang diperoleh melalui Google Colab.
 
 ## Cara menjalankan ulang
 
@@ -108,6 +104,13 @@ Atau buka notebook di Google Colab (Runtime → Change runtime type → T4 GPU).
 
 ## Referensi
 
-- Jha, D., dkk. (2020). Kvasir-SEG: A Segmented Polyp Dataset. *MultiMedia Modeling (MMM 2020)*, 451–462.
-- Ronneberger, O., Fischer, P., & Brox, T. (2015). U-Net: Convolutional Networks for Biomedical Image Segmentation. *MICCAI*. arXiv:1505.04597.
-- ✍️ tambahkan referensi lain yang kalian pakai
+- Jha, D., Smedsrud, P. H., Riegler, M. A., Halvorsen, P., de Lange, T., Johansen, D., & Johansen, H. D. (2020). Kvasir-SEG: A Segmented Polyp Dataset. MultiMedia Modeling (MMM 2020), 451–462. https://doi.org/10.1007/978-3-030-37734-2_37. 
+datasets.simula.no+1
+- Ronneberger, O., Fischer, P., & Brox, T. (2015). U-Net: Convolutional Networks for Biomedical Image Segmentation. Medical Image Computing and Computer-Assisted Intervention (MICCAI 2015), 234–241. https://doi.org/10.1007/978-3-319-24574-4_28.
+- Adjei, P. E., Lonseko, Z. M., Du, W., Zhang, H., & Rao, N. (2022). Examining the effect of synthetic data augmentation in polyp detection and segmentation. International Journal of Computer Assisted Radiology and Surgery, 17(7), 1289–1302. https://doi.org/10.1007/s11548-022-02651-x. 
+PubMed
+- Liu, X., Isa, N. A. M., Chen, C., & Lv, F. (2025). Colorectal Polyp Segmentation Based on Deep Learning Methods: A Systematic Review. Journal of Imaging, 11(9), 293. https://doi.org/10.3390/jimaging11090293. 
+PubMed+1
+- Mei, J., Zhou, T., Huang, K., Zhang, Y., Zhou, Y., Wu, Y., et al. (2025). A survey on deep learning for polyp segmentation: techniques, challenges and future trends. Visual Intelligence, 3, Article 1. https://doi.org/10.1007/s44267-024-00071-w. 
+DOI
+- Bernal, J., Sánchez, J., Fernández-Esparrach, G., Gil, D., Rodríguez, C., & Vilariño, F. (2015). WM-DOVA maps for accurate polyp highlighting in colonoscopy: Validation vs. saliency maps from physicians. Computerized Medical Imaging and Graphics, 43, 99–111. https://doi.org/10.1016/j.compmedimag.2015.02.007.
