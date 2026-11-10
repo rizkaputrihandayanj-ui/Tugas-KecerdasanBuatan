@@ -17,8 +17,7 @@
 
 | Nama | NIM | Username GitHub | Kontribusi utama |
 |---|---|---|---|
-| Rizka Putri Handayani | 123430017 | rizkaputrihandayanj-ui |  misal: menjalankan eksperimen, menulis Bagian 3 |
-| ✍️ | ✍️ | ✍️ | ✍️ |
+| Rizka Putri Handayani | 123430017 | rizkaputrihandayanj-ui |  menjalankan eksperimen, menulis bagian 3, menulis bagian 4 |
 | ✍️ | ✍️ | ✍️ | ✍️ |
 
 ## 1. Pertanyaan
@@ -44,9 +43,10 @@ Augmentasi apa yang membantu U-Net menemukan polip pada citra kolonoskopi, dan a
 | Skenario | Augmentasi (kode) | Alasan klinis | Hipotesis: Dice naik/turun/sama? |
 |---|---|---|---|
 | Tanpa augmentasi | — | Pembanding | — |
-| ✍️ | ✍️ `v2....` | ✍️ | ✍️ |
-| ✍️ | ✍️ `v2....` | ✍️ | ✍️ |
-
+| Flip horizontal | `v2.RandomHorizontalFlip(p=0.5)` | Polip dapat terlihat dari berbagai orientasi akibat perubahan posisi dan sudut pengambilan gambar kamera kolonoskopi. | Naik |
+| Rotasi | `v2.RandomRotation(degrees=15)` | Posisi dan orientasi citra dapat berubah selama pemeriksaan akibat pergerakan kamera kolonoskopi. | Naik |
+| Kecerahan & kontras | `v2.ColorJitter(brightness=0.2, contrast=0.2)` | Intensitas pencahayaan dan kontras citra dapat berbeda akibat kondisi pencahayaan serta jarak kamera terhadap jaringan.| Naik |
+| Kombinasi | `Flip horizontal + Rotasi + Kecerahan & kontras` | Menggabungkan variasi orientasi dan pencahayaan untuk meningkatkan kemampuan model dalam mengenali polip pada kondisi citra yang beragam.| Naik |
 Contoh augmentasi yang dicoba:
 
 ![Contoh augmentasi](hasil/augmentasi_flip.png)
@@ -56,9 +56,15 @@ Contoh augmentasi yang dicoba:
 
 <!-- Tempel isi hasil/ringkasan.md di sini. -->
 
-✍️ tempel tabel dari `hasil/ringkasan.md`
+| Skenario | Dice (rata-rata ± sb) | IoU (rata-rata ± sb) | Dice tiap ulangan |
+|---|---|---|---|
+| Tanpa augmentasi | 0.535 ± 0.078 | 0.429 ± 0.063 | 0.552, 0.621, 0.431 |
+| Flip horizontal | 0.574 ± 0.045 | 0.463 ± 0.036 | 0.593, 0.617, 0.511 |
+| Rotasi | 0.562 ± 0.059 | 0.455 ± 0.053 | 0.485, 0.572, 0.628 |
+| Kecerahan & kontras | 0.438 ± 0.102 | 0.345 ± 0.088 | 0.399, 0.577, 0.337 |
+| Kombinasi | 0.543 ± 0.041 | 0.432 ± 0.036 | 0.562, 0.486, 0.582 | 
 
-![Perbandingan Dice](hasil/perbandingan.png)
+(https://colab.research.google.com/drive/1SA3Hcq02cK_OzUxZQH8k8mBtKLuKPYcD#scrollTo=14dd4f45&fullscreenOutput=true)
 
 ## 5. Analisis peta kesalahan
 
