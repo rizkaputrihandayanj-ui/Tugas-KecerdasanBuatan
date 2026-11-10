@@ -60,6 +60,7 @@ https://colab.research.google.com/drive/1SA3Hcq02cK_OzUxZQH8k8mBtKLuKPYcD#scroll
 | Kecerahan & kontras | 0.438 ± 0.102 | 0.345 ± 0.088 | 0.399, 0.577, 0.337 |
 | Kombinasi | 0.543 ± 0.041 | 0.432 ± 0.036 | 0.562, 0.486, 0.582 | 
 
+![Perbandingan hasil](hasil/perbandingan.png)
 (https://colab.research.google.com/drive/1SA3Hcq02cK_OzUxZQH8k8mBtKLuKPYcD#scrollTo=14dd4f45&fullscreenOutput=true)
 
 ## 5. Analisis peta kesalahan
@@ -67,6 +68,8 @@ https://colab.research.google.com/drive/1SA3Hcq02cK_OzUxZQH8k8mBtKLuKPYcD#scroll
 Berdasarkan visualisasi peta kesalahan segmentasi, terlihat bahwa performa model berbeda pada setiap jenis augmentasi. Pengujian tanpa augmentasi menghasilkan rata-rata Dice sebesar 0,478, sedangkan flip horizontal memperoleh nilai tertinggi sebesar 0,705. Augmentasi rotasi menghasilkan rata-rata Dice sebesar 0,558, kombinasi augmentasi sebesar 0,510, dan perubahan kecerahan serta kontras memperoleh nilai terendah sebesar 0,095. Hasil ini menunjukkan bahwa flip horizontal memberikan kesesuaian segmentasi terbaik dibandingkan teknik augmentasi lainnya pada empat citra yang diuji.
 
 Perbedaan nilai Dice menunjukkan bahwa model masih memiliki tingkat kesalahan segmentasi yang bervariasi, terutama dalam mengenali area dan batas objek sesuai anotasi dokter. Pada beberapa citra, hasil prediksi memiliki kesesuaian yang tinggi, sedangkan citra lainnya menunjukkan perbedaan area yang cukup besar. Perubahan kecerahan dan kontras diduga memengaruhi kemampuan model dalam mengenali karakteristik objek, sehingga menghasilkan segmentasi yang kurang optimal. Secara keseluruhan, flip horizontal menjadi teknik augmentasi dengan hasil terbaik pada pengujian ini, tetapi pengujian menggunakan lebih banyak data tetap diperlukan untuk memastikan konsistensi performa model.
+
+![Peta kesalahan](hasil/peta_kesalahan.png)
 
 https://colab.research.google.com/drive/1SA3Hcq02cK_OzUxZQH8k8mBtKLuKPYcD#scrollTo=0b460587&fullscreenOutput=true
 
