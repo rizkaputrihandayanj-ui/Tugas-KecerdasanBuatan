@@ -47,7 +47,6 @@ Augmentasi apa yang membantu U-Net menemukan polip pada citra kolonoskopi, dan a
 | Rotasi | `v2.RandomRotation(degrees=15)` | Posisi dan orientasi citra dapat berubah selama pemeriksaan akibat pergerakan kamera kolonoskopi. | Naik |
 | Kecerahan & kontras | `v2.ColorJitter(brightness=0.2, contrast=0.2)` | Intensitas pencahayaan dan kontras citra dapat berbeda akibat kondisi pencahayaan serta jarak kamera terhadap jaringan.| Naik |
 | Kombinasi | `Flip horizontal + Rotasi + Kecerahan & kontras` | Menggabungkan variasi orientasi dan pencahayaan untuk meningkatkan kemampuan model dalam mengenali polip pada kondisi citra yang beragam.| Naik |
-Contoh augmentasi yang dicoba:
 https://colab.research.google.com/drive/1SA3Hcq02cK_OzUxZQH8k8mBtKLuKPYcD#scrollTo=6389f853&fullscreenOutput=true
 <!-- Ganti nama file sesuai skenario kalian (lihat isi folder hasil/). -->
 
