@@ -1,0 +1,78 @@
+{
+  "pengaturan": {
+    "CEPAT": false,
+    "JUMLAH_CITRA_LATIH": 200,
+    "JUMLAH_EPOCH": 30,
+    "JUMLAH_ULANGAN": 3,
+    "device": "cuda",
+    "skenario": {
+      "Tanpa augmentasi": "None",
+      "Flip horizontal": "Compose(    RandomHorizontalFlip(p=0.5))",
+      "Rotasi": "Compose(    RandomRotation(degrees=[-15.0, 15.0], interpolation=nearest, expand=False, fill=0))",
+      "Kecerahan & kontras": "ColorJitter(brightness=(0.8, 1.2), contrast=(0.8, 1.2))",
+      "Kombinasi": "Compose(\n      RandomHorizontalFlip(p=0.5)\n      RandomRotation(degrees=[-15.0, 15.0], interpolation=nearest, expand=False, fill=0)\n      ColorJitter(brightness=(0.8, 1.2), contrast=(0.8, 1.2))\n)"
+    }
+  },
+  "hasil": {
+    "Tanpa augmentasi": {
+      "dice": [
+        0.5518195629119873,
+        0.6211467385292053,
+        0.43138694763183594
+      ],
+      "iou": [
+        0.44894739985466003,
+        0.49524757266044617,
+        0.34424158930778503
+      ]
+    },
+    "Flip horizontal": {
+      "dice": [
+        0.592936098575592,
+        0.616534411907196,
+        0.5111179947853088
+      ],
+      "iou": [
+        0.479196161031723,
+        0.4975217878818512,
+        0.41345345973968506
+      ]
+    },
+    "Rotasi": {
+      "dice": [
+        0.4849075973033905,
+        0.5719789266586304,
+        0.6282151937484741
+      ],
+      "iou": [
+        0.38759711384773254,
+        0.46016284823417664,
+        0.5172186493873596
+      ]
+    },
+    "Kecerahan & kontras": {
+      "dice": [
+        0.3986184597015381,
+        0.5770155787467957,
+        0.33688923716545105
+      ],
+      "iou": [
+        0.310403436422348,
+        0.4658787250518799,
+        0.25841057300567627
+      ]
+    },
+    "Kombinasi": {
+      "dice": [
+        0.5620062351226807,
+        0.4858865737915039,
+        0.5815007090568542
+      ],
+      "iou": [
+        0.44278502464294434,
+        0.3831137716770172,
+        0.4704477787017822
+      ]
+    }
+  }
+}
